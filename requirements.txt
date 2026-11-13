@@ -1,0 +1,18 @@
+# Abhängigkeiten für CINE·PREDICT (APP.py) — Deployment auf Streamlit Community Cloud
+#
+# Einstellungen im Streamlit-Dashboard:
+#   Main file path : APP.py
+#   Python version : 3.13   (die Pins unten sind für 3.10–3.13 getestet)
+#
+# Der OpenRouter-API-Key wird zur Laufzeit in der Seitenleiste der App eingegeben
+# und nur in der Streamlit-Session gehalten — keine .env, keine Secrets nötig.
+
+streamlit>=1.40,<2.0
+
+# LLM-Anbindung: ChatOpenRouter -> OpenRouter -> anthropic/claude-haiku-5.5
+# langchain-openrouter 0.2.x setzt langchain-core >= 1.5 und die openrouter-SDK voraus.
+langchain-openrouter>=0.2.9,<0.3
+langchain-core>=1.5.5,<2.0
+
+# Strukturierte Ausgabe (Pydantic-Modelle in APP.py)
+pydantic>=2.7,<3.0
